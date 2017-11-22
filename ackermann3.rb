@@ -10,8 +10,12 @@
 #  ƒ(m,0,p) = m for p > 2
 #  ƒ(m,n,p) = ƒ(m, ƒ(m,n - 1,p), p - 1) for n > 0 and p > 0
 #
+#  Usage: ruby ./ackerman3.rb raw | ack
+#
 # RUBY_THREAD_VM_STACK_SIZE 1G
 ##
+
+fun = ARGV[0]
 
 def ack(m, n, p)
   @ack ||= {}
@@ -61,8 +65,7 @@ end
     9.times do |p|
 
       if (m+n+p) < 9
-        do_ack(:raw, m, n, p)
-#       do_ack(:ack, m, n, p)
+        do_ack(fun, m, n, p)
       end
 
     end
