@@ -1,4 +1,8 @@
-# Knuth Ackermann function with 3 argument variant
+# Knuth Ackermann function with 3 argument: n, a, b variant
+#
+#  ƒ(ø,a,b) = a * b
+#  ƒ(n,a,0) = 1
+#  ƒ(n+1,a,b+1) = ƒ(n-1, a, ƒ(n,a,b-1) for n > 0 and b > 0
 #
 # RUBY_THREAD_VM_STACK_SIZE 50M
 class MyBad
@@ -35,11 +39,9 @@ end
   9.times do |a|
     9.times do |b|
 
-      if (n+a+b) < 9
-        print "(#{n}:#{a}:#{b}) => "
-        result = MyBad.ack(n, a, b)
-        puts result
-      end
+      print "(#{n}:#{a}:#{b}) => "
+      result = MyBad.ack(n, a, b)
+      puts result
 
     end
   end

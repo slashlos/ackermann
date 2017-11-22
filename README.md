@@ -13,6 +13,7 @@ Each Languages
 * calcc general implementation
 * Fiber implementation
 * while loop implementation
+* Knuth implementation 3 arg Ackermann function
 
 ### C
 
